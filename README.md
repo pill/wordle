@@ -18,7 +18,7 @@ A Go implementation of Wordle game infrastructure.
 
 ```bash
 # Clone the repository
-git clone <repository-url>
+git clone git@github.com:pill/wordle.git
 cd wordle
 
 # Run the word list demo

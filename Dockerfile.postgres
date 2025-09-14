@@ -1,0 +1,14 @@
+FROM postgres:15-alpine
+
+# Set environment variables
+ENV POSTGRES_DB=wordle
+ENV POSTGRES_USER=wordle_user
+ENV POSTGRES_PASSWORD=wordle_password
+
+# Create a directory for initialization scripts
+COPY ./db/init/ /docker-entrypoint-initdb.d/
+
+# Expose the PostgreSQL port
+EXPOSE 5432
+
+# The postgres image already has the correct CMD to start PostgreSQL

@@ -114,7 +114,7 @@ func TestWordListReload(t *testing.T) {
 	// Create a temporary test file
 	tempDir := t.TempDir()
 	testFile := filepath.Join(tempDir, "test-words.txt")
-	
+
 	content := "apple\nbanana\ncherry\n"
 	err := os.WriteFile(testFile, []byte(content), 0644)
 	if err != nil {
@@ -152,7 +152,7 @@ func TestWordListEmptyFile(t *testing.T) {
 	// Create an empty temporary file
 	tempDir := t.TempDir()
 	testFile := filepath.Join(tempDir, "empty.txt")
-	
+
 	err := os.WriteFile(testFile, []byte(""), 0644)
 	if err != nil {
 		t.Fatalf("Failed to create empty test file: %v", err)
@@ -176,7 +176,7 @@ func TestWordListNormalization(t *testing.T) {
 	// Create a test file with mixed case and whitespace
 	tempDir := t.TempDir()
 	testFile := filepath.Join(tempDir, "test-normalization.txt")
-	
+
 	content := "  Apple  \nBANANA\n  cherry\n\n  \nDATE\n"
 	err := os.WriteFile(testFile, []byte(content), 0644)
 	if err != nil {
