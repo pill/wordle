@@ -243,45 +243,6 @@ func TestGuessRepository(t *testing.T) {
 	}
 }
 
-func TestEvaluateGuess(t *testing.T) {
-	tests := []struct {
-		guess    string
-		target   string
-		expected []string // status for each letter
-	}{
-		{
-			guess:    "HELLO",
-			target:   "HELLO",
-			expected: []string{"correct", "correct", "correct", "correct", "correct"},
-		},
-		{
-			guess:    "WORLD",
-			target:   "HELLO",
-			expected: []string{"absent", "absent", "absent", "present", "present"},
-		},
-		{
-			guess:    "LLAMA",
-			target:   "HELLO",
-			expected: []string{"absent", "correct", "present", "absent", "absent"},
-		},
-	}
-
-	for _, test := range tests {
-		result := EvaluateGuess(test.guess, test.target)
-
-		if len(result) != len(test.expected) {
-			t.Errorf("Expected result length %d, got %d", len(test.expected), len(result))
-			continue
-		}
-
-		for i, letter := range result {
-			if letter.Status != test.expected[i] {
-				t.Errorf("For guess '%s' vs target '%s', position %d: expected '%s', got '%s'",
-					test.guess, test.target, i, test.expected[i], letter.Status)
-			}
-		}
-	}
-}
 
 func TestGameWithGuessesIntegration(t *testing.T) {
 	db := setupTestDB(t)

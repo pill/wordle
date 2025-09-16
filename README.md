@@ -54,10 +54,6 @@ The server component includes a robust word list management system implemented i
 - 🔄 Player statistics
 - 🔄 REST API endpoints
 
-## Client
-
-- Type letters
-- Send input to server
 
 ### Display Features (Planned)
 - letter used
@@ -66,22 +62,6 @@ The server component includes a robust word list management system implemented i
 - handle multiple letters
 - show previous answers
 - annotate answers (yellow, green)
-
-## Architecture
-
-```
-wordle/
-├── go.mod                      # Go module definition
-├── server/
-│   ├── wordlist.go            # Word list management
-│   ├── main.go                # Demo program
-│   ├── wordlist_test.go       # Test suite
-│   ├── valid-wordle-words.txt # Word database (14,855 words)
-│   └── README.md              # Server documentation
-├── client/
-│   └── README.md              # Client documentation (TBD)
-└── README.md                  # This file
-```
 
 ## Development
 
