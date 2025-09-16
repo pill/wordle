@@ -8,9 +8,9 @@ import (
 
 // GameService handles business logic for Wordle games
 type GameService struct {
-	gameRepo  *GameRepository
-	guessRepo *GuessRepository
-	wordList  *WordList
+	gameRepo  GameRepositoryInterface
+	guessRepo GuessRepositoryInterface
+	wordList  WordListInterface
 	config    *GameConfig
 }
 
@@ -19,6 +19,16 @@ func NewGameService(db *DB, wordList *WordList, config *GameConfig) *GameService
 	return &GameService{
 		gameRepo:  NewGameRepository(db),
 		guessRepo: NewGuessRepository(db),
+		wordList:  wordList,
+		config:    config,
+	}
+}
+
+// NewGameServiceWithInterfaces creates a new game service with injectable interfaces
+func NewGameServiceWithInterfaces(gameRepo GameRepositoryInterface, guessRepo GuessRepositoryInterface, wordList WordListInterface, config *GameConfig) *GameService {
+	return &GameService{
+		gameRepo:  gameRepo,
+		guessRepo: guessRepo,
 		wordList:  wordList,
 		config:    config,
 	}

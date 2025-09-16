@@ -10,6 +10,11 @@ import (
 	"time"
 )
 
+/*
+This could be in the database but for now it's loaded from a file
+*/
+
+
 // WordList represents a collection of words loaded from a file
 type WordList struct {
 	words    []string
