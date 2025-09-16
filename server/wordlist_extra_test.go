@@ -222,9 +222,17 @@ func TestWordListToSetConsistency(t *testing.T) {
 	slice := wordList.ToSlice()
 	set := wordList.ToSet()
 
-	// Set should have the same number of unique words as slice
-	if len(set) != len(slice) {
-		t.Errorf("Set size %d should match slice size %d", len(set), len(slice))
+	// Set should have the same number of unique words
+	// Note: slice may contain duplicates, set will not
+	expectedUniqueWords := 3 // HELLO, WORLD, CRANE (HELLO appears twice in file)
+	if len(set) != expectedUniqueWords {
+		t.Errorf("Set size %d should be %d unique words", len(set), expectedUniqueWords)
+	}
+	
+	// The slice should contain all words including duplicates
+	expectedTotalWords := 4 // HELLO, WORLD, CRANE, HELLO
+	if len(slice) != expectedTotalWords {
+		t.Errorf("Slice size %d should be %d total words", len(slice), expectedTotalWords)
 	}
 
 	// Every word in slice should be in set

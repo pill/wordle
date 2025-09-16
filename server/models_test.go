@@ -184,7 +184,7 @@ func TestEvaluateGuess(t *testing.T) {
 			guess:  "LLAMA",
 			target: "HELLO",
 			expected: []LetterResult{
-				{Letter: "L", Status: "correct"},
+				{Letter: "L", Status: "present"},
 				{Letter: "L", Status: "present"},
 				{Letter: "A", Status: "absent"},
 				{Letter: "M", Status: "absent"},
