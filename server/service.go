@@ -37,6 +37,8 @@ func NewGameServiceWithInterfaces(gameRepo GameRepositoryInterface, guessRepo Gu
 // CreateNewGame creates a new game with a random target word
 func (s *GameService) CreateNewGame() (*Game, error) {
 	// Get a random five-letter word
+	// TODO: this could be in the database but for now it's loaded from a file
+	// TODO: random word should not repeat for user
 	fiveLetterWords := s.wordList.FiveLetterWords()
 	if len(fiveLetterWords) == 0 {
 		return nil, fmt.Errorf("no five-letter words available")
