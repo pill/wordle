@@ -232,7 +232,7 @@ const WordleGame = () => {
             value={currentGuess}
             onChange={handleInputChange}
             onKeyPress={handleKeyPress}
-            placeholder="Enter your guess"
+            placeholder="5-letter word"
             className="guess-input"
             maxLength={5}
             disabled={loading}
