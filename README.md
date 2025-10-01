@@ -1,6 +1,7 @@
 # Wordle Game
 
 A full-stack Wordle implementation with a Go backend API and React frontend client.
+I used this project to start learning Go and play with Cursor, as well as get my head around some simple game design.
 
 ## 🎮 Features
 
@@ -19,6 +20,12 @@ A full-stack Wordle implementation with a Go backend API and React frontend clie
 - Visual alphabet grid showing used letters
 - Game statistics and history
 - Responsive design for mobile and desktop
+
+## Screenshot of Test Client
+
+<p align="center">
+  <img width="500" alt="wordle" src="https://github.com/user-attachments/assets/4ee21a7a-c936-4d98-8f18-4362d5f0c4cd" />
+</p>
 
 ## 🚀 Quick Start
 
