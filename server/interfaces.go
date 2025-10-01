@@ -25,6 +25,9 @@ type GuessRepositoryInterface interface {
 type WordListInterface interface {
 	Contains(word string) bool
 	RandomWord() string
+	RandomValidWord() string
 	FiveLetterWords() []string
+	FiveLetterTargetWords() []string
 	Size() int
+	TargetWordsSize() int
 }

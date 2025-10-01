@@ -283,6 +283,21 @@ func (m *MockWordList) Size() int {
 	return len(m.words)
 }
 
+func (m *MockWordList) RandomValidWord() string {
+	if len(m.words) == 0 {
+		return ""
+	}
+	return m.words[1] // Return second word for testing
+}
+
+func (m *MockWordList) FiveLetterTargetWords() []string {
+	return m.words // For testing, use same words as target words
+}
+
+func (m *MockWordList) TargetWordsSize() int {
+	return len(m.words)
+}
+
 // Test functions
 
 func TestGameServiceCreateNewGame(t *testing.T) {

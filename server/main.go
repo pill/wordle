@@ -58,7 +58,7 @@ func main() {
 	address := config.Server.Address()
 	log.Printf("Wordle API server starting on %s...", address)
 	log.Printf("Database connected: %s", config.Database.DatabaseURL())
-	log.Printf("Word list loaded: %d words", wordList.Size())
+	log.Printf("Word lists loaded: %d validation words, %d target words", wordList.Size(), wordList.TargetWordsSize())
 	
 	log.Fatal(http.ListenAndServe(address, nil))
 }

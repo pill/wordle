@@ -34,12 +34,21 @@ func NewGameServiceWithInterfaces(gameRepo GameRepositoryInterface, guessRepo Gu
 	}
 }
 
-// CreateNewGame creates a new game with a random target word
+// CreateNewGame creates a new game with a random target word from the common words list
 func (s *GameService) CreateNewGame() (*Game, error) {
+<<<<<<< Updated upstream
 	// Get a random five-letter word
 	fiveLetterWords := s.wordList.FiveLetterWords()
 	if len(fiveLetterWords) == 0 {
 		return nil, fmt.Errorf("no five-letter words available")
+=======
+	// Get a random five-letter word from the target words (common words)
+	// TODO: this could be in the database but for now it's loaded from a file
+	// TODO: random word should not repeat for user
+	fiveLetterTargetWords := s.wordList.FiveLetterTargetWords()
+	if len(fiveLetterTargetWords) == 0 {
+		return nil, fmt.Errorf("no five-letter target words available")
+>>>>>>> Stashed changes
 	}
 
 	targetWord := strings.ToUpper(s.wordList.RandomWord())
